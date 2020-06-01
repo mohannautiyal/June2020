@@ -1,0 +1,24 @@
+200  OK             The request was successfully completed.
+400  Bad Request    The request was invalid.
+401  Unauthorized   The request did not include an authentication token or the authentication token was expired.
+403  Forbidden      The client did not have permission to access the requested resource.
+404  Not Found      The requested resource was not found.
+500  Internal Server Error The request was not completed due to an internal error on the server side.
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
