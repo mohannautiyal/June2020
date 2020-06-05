@@ -29,7 +29,9 @@ public class restPostRequest {
 	@Test
 	public void verifyPostReq() {
 
-		RestAssured.baseURI = "http://restapi.demoqa.com/customer";
+		RestAssured.baseURI = "https://restapi.demoqa.com/customer";
+		RequestSpecification request = RestAssured.given();
+
 		JSONObject reqParam= new JSONObject();
 		reqParam.put("FirstName", "Mohan");
 		reqParam.put("LastName", "Lal");
@@ -37,12 +39,13 @@ public class restPostRequest {
 		reqParam.put("Password", "Test");
 		reqParam.put("Email", "mlalTest@gmail.com");
 
-		RequestSpecification rs = RestAssured.given();
-		rs.body(reqParam.toJSONString());
-		Response rsp = rs.post("/register");
-		int status = rsp.statusCode();
-		String rspbody = rsp.getStatusLine();
-		System.out.println(status +" "+rspbody );
+		request.relaxedHTTPSValidation();
+		request.body(reqParam.toJSONString());
+		Response response = request.post("/register");
+		int status = response.getStatusCode();
+		String successCode = response.getBody().jsonPath().get("SuccessCode");
+		String rspbody = response.getStatusLine();
+		System.out.println(successCode +" "+rspbody );
 		assertTrue( status==200);
 
 	}
