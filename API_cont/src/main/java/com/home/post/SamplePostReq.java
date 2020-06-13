@@ -14,10 +14,10 @@ public class SamplePostReq {
 		RestAssured.baseURI = "https://gorest.co.in";
 		
 		JSONObject json = new JSONObject();
-		json.put("first_name", "Raj");
+		json.put("first_name", "Manojx");
 		json.put("last_name", "ZZKumar");
 		json.put("gender", "male");
-		json.put("email", "rajzzkumar@gmail.com");
+		json.put("email", "manojzzkumar@gmail.com");
 		json.put("status", "active");
 		RequestSpecification Request = RestAssured.given()
 				         .header("Accept","application/json")
@@ -29,15 +29,16 @@ public class SamplePostReq {
 		
 
 		Response response =Request.post("/public-api/users");
-	     String str =   response.getBody().jsonPath().getString("$_meta");
-			System.out.println(str);	
+	     System.out.println(response.getBody().jsonPath().getString("_meta"));
+				
 		
 
 		RequestSpecification Request1 = RestAssured.given()
 				.header("Authorization","Bearer x7WAghTGiZcymPxJprRUloL4JKL_ta0-MjAL")
-				     .queryParam("first_name", "Raj");
+				     .queryParam("first_name", "Manojx");
 		Response response1 =Request1.get("/public-api/users");
 		//response1.getBody().prettyPrint();
+		
 		goPostObj Users =response1.getBody().as(goPostObj.class);
 		Users.getResult().stream().forEach(x -> System.out.println(x.getFirst_name()+ " "+x.last_name))
 		                   ;
