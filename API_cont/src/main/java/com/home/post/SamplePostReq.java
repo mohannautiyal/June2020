@@ -1,6 +1,12 @@
 package com.home.post;
 
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.List;
+
 import org.json.simple.JSONObject;
+
+import com.hom.excelPOI.ExcelUtil;
 
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
@@ -9,16 +15,24 @@ import io.restassured.specification.RequestSpecification;
 public class SamplePostReq {
 
 	//https://gorest.co.in/
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 
 		RestAssured.baseURI = "https://gorest.co.in";
 		
 		JSONObject json = new JSONObject();
-		json.put("first_name", "Manojx");
-		json.put("last_name", "ZZKumar");
-		json.put("gender", "male");
-		json.put("email", "manojzzkumar@gmail.com");
-		json.put("status", "active");
+		
+		ExcelUtil excel = new ExcelUtil("Dummy.xlsx","APIData");
+		List<HashMap<String,String>> exceldata = excel.ReadExcel();
+		
+		//json.putAll(exceldata.get(0));
+		json.putAll(exceldata.get(1));
+		
+		/*
+		 * json.put("first_name", "Manojx"); json.put("last_name", "ZZKumar");
+		 * json.put("gender", "male"); json.put("email", "manojzzkumar@gmail.com");
+		 * json.put("status", "active");
+		 */
+		System.out.println(json.toString());
 		RequestSpecification Request = RestAssured.given()
 				         .header("Accept","application/json")
 				         .header("Content-Type","application/json")
@@ -35,7 +49,7 @@ public class SamplePostReq {
 
 		RequestSpecification Request1 = RestAssured.given()
 				.header("Authorization","Bearer x7WAghTGiZcymPxJprRUloL4JKL_ta0-MjAL")
-				     .queryParam("first_name", "Manojx");
+				     .queryParam("first_name", "Mohan");
 		Response response1 =Request1.get("/public-api/users");
 		//response1.getBody().prettyPrint();
 		
