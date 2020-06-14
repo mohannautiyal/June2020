@@ -1,7 +1,9 @@
 package com.home.Java8;
 
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import java.util.function.Consumer;
 
 public class ConsumerInterface  {
@@ -30,6 +32,18 @@ public class ConsumerInterface  {
 			System.out.println();
 			multiplyLamda.accept(l1);
 			
+			System.out.println("\n====================");
+			// For each takes consumer as an argument
+			Consumer<Integer> consumer = x -> System.out.println(x +10) ;
+			l1.forEach(consumer);
+			
+			// Add list to anothe set using Consumer
+			Set<Integer> set = new HashSet<Integer>();
+			Consumer<Integer> addToSet = x -> set.add(x);
+			l1.forEach(addToSet);
+			System.out.println("\n====================");
+
+			set.forEach(System.out::println);
 			
 		}
 
