@@ -10,7 +10,12 @@ public class runner {
 		s1.singleInstance = 10;
 		System.out.println(s2.singleInstance);
 
+		//================================================
 		
+		SingleObjectEager s11 = SingleObjectEager.getInstance();
+		SingleObjectEager s12 = SingleObjectEager.getInstance();
+		System.out.println(s11==s12);
+
 		
 	}
 

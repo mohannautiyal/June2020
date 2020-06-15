@@ -1,5 +1,7 @@
 package com.home.DesignPatterns;
 
+
+// Lazy instantiation
 public class SingleObject {
 
 	private static SingleObject singleObject;
