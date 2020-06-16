@@ -17,6 +17,17 @@ public class ConsumerEmpTest {
 	};
 	
 	
+	// Consumer if input as list
+	static Consumer<List<Employee>> empNameToLower = x -> {
+		for(Employee emp:x) {
+			emp.setEmpName((emp.getEmpName().toLowerCase()));
+			
+		}
+		
+	};
+	
+	
+	
 	public static void main(String[] args) {
 		List<Employee> employees = new ArrayList<Employee>();
 		employees.add(new Employee("Madan",1000,12));
@@ -26,6 +37,9 @@ public class ConsumerEmpTest {
 		
 		employees.forEach(empName);
 		employees.forEach(hikeSalary);
+		employees.forEach(x -> System.out.println(x));
+        
+		empNameToLower.accept(employees);
 		employees.forEach(x -> System.out.println(x));
 
 	}
