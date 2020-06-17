@@ -1,0 +1,14 @@
+{
+	"name": "Mohan",
+	"rollno": "1234",
+	"subjects": [
+		{
+			"subjectName": "Maths",
+			"marks": 100
+		},
+		{
+			"subjectName": "Englist",
+			"marks": 200
+		}
+	]
+}
