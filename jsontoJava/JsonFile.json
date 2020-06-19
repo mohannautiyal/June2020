@@ -3,12 +3,12 @@
 	"rollno": "1234",
 	"subjects": [
 		{
-			"subjectName": "Maths",
-			"marks": 100
+			"marks": 100,
+			"subject_name": "Maths"
 		},
 		{
-			"subjectName": "Englist",
-			"marks": 200
+			"marks": 200,
+			"subject_name": "Englist"
 		}
 	]
 }

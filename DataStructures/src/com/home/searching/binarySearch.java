@@ -7,7 +7,7 @@ public class binarySearch {
 	public static void main(String[] args) {
 
 		int sortedarr[] = { 22, 45, 67, 89, 99, 200 };
-		binarySearchMethod(819, sortedarr);
+		binarySearchMethod(89, sortedarr);
 	}
 
 	public static void binarySearchMethod(int number, int[] sortedarr) {
@@ -18,6 +18,8 @@ public class binarySearch {
 		boolean found = false;
 		while (lastIndex >= firstIndex) {
 			midIndex = (firstIndex + lastIndex) / 2;
+			System.out.println(firstIndex+" "+midIndex+" "+lastIndex);
+
 			if (number == sortedarr[midIndex]) {
 				System.out.println(sortedarr[midIndex] + " number is present at index " + midIndex);
 				 found = true;
@@ -28,6 +30,7 @@ public class binarySearch {
 			} else {
 				lastIndex = midIndex - 1;
 			}
+
 		}
 		if (found ==false)
 		System.out.println(number + " number is not present ");
