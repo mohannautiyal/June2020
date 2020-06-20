@@ -35,6 +35,8 @@ public class Example6 {
 		
 		empData.stream().filter(x -> checkMarks.test(x.getEmpName(), x.getTotalMarks()))
 		.forEach(x -> System.out.println());
+		
+		
 
 	}
 	
