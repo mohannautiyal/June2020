@@ -31,7 +31,6 @@ public class ConsumerEmpTest {
 	public static void main(String[] args) {
 		List<Employee> employees = new ArrayList<Employee>();
 		employees.add(new Employee("Madan",1000,12));
-		employees.add(new Employee("Rohan",2000,22));
 		employees.add(new Employee("Amit",3000,32));
 		employees.add(new Employee("Raj",5000,42));
 		
