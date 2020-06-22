@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Predicate;
 
-public class Example1 {
+public class AllMatchAnyMatchExample1 {
 
 	
 	// All Match //Any Match // none Match
