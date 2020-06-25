@@ -45,6 +45,10 @@ public class ExampleComparator {
        Collections.sort(persons, salaryComparator1);
        System.out.println("======================================");
        persons.stream().forEach(p -> System.out.println(p));
+       System.out.println("======================================");
+       Collections.sort(persons, salaryComparator1.reversed());
+       persons.stream().forEach(p -> System.out.println(p));
+
 
 }
 
